@@ -1,7 +1,12 @@
 #pragma once
 
 #include <Arduino.h>
+#ifdef _AVR_INTERRUPT_H_
 #include <IRremote.h>
+#else
+#include <IRremoteESP8266.h>
+#include <IRsend.h>
+#endif
 
 #include "Protocol.h"
 #include "ControllerState.h"

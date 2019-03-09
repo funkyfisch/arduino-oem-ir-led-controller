@@ -5,7 +5,12 @@
  * Initialises the controller object
 */ 
 OEMIRLEDController::OEMIRLEDController() {
+    #ifndef _AVR_INTERRUPT_H_
+    _irsend = new IRsend(4);
+    _irsend->begin();
+    #else
     _irsend = new IRsend();
+    #endif
     reset();
 }
 
