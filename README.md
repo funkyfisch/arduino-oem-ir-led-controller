@@ -19,7 +19,7 @@ Connect the short leg of the LED on to a GND pin.
 
 ### API
 You need to include this library and create an instance of the IR LED controller.
-```
+```cpp
 #include <OEMIRLEDController.h>
 OEMIRLEDController* controller;
 
@@ -29,7 +29,7 @@ void setup() {
 ```
 
 After you do that, you can use the following controls and the corresponding pulse for them will be sent.
-```
+```cpp
 controller->powerOn();                       // powers on the led bulb/strip
 controller->powerOff();                      // powers off the led bulb/strip
 controller->brighten();                      // increases brightness level of bulb/strip (10 levels supported)
@@ -42,7 +42,7 @@ controller->reset();                         // synchronises the state of the co
 
 ### Controller Mode Reference
 These are the modes currently supported to be used with <b> setMode() </b> :
-```
+```cpp
 CONTROLLER_STATE_IDLE                        // idle state, continuous light
 CONTROLLER_STATE_STROBE                      // strobing mode
 CONTROLLER_STATE_FADE                        // fading mode, fades in and out
@@ -51,7 +51,7 @@ CONTROLLER_STATE_SMOOTH                      // smooth mode
 
 ### Colour Reference
 These are the colours currently supported to be used with <b> setColour() </b> :
-```
+```cpp
 LSIR_RED
 LSIR_ORANGE
 LSIR_DARKYELLOW
@@ -72,7 +72,7 @@ LSIR_WHITE
 
 ### Example Use Case
 In this example, we want to create a special effect, where we would cycle through Red, Green and Blue colours, while fading in/out in between. You can find this sketch in the Examples folder.
-```
+```cpp
 #include <OEMIRLEDController.h>
 OEMIRLEDController* controller;
 
