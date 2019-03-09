@@ -1,8 +1,9 @@
-
 #include "OEMIRLEDController.h"
 
 /**
  * Initialises the controller object
+ * The two libraries are almost identical, apart from this
+ * part.
 */ 
 OEMIRLEDController::OEMIRLEDController() {
     #ifndef _AVR_INTERRUPT_H_
@@ -39,10 +40,13 @@ void OEMIRLEDController::powerOff() {
 }
 
 /**
- * Sets a specific colour to the LEDs
+ * Sets a specific colour to the LEDs.
+ * Note that while the LED is not in CONTROLLER_STATE_IDLE, this
+ * will cause the LED bulb/strip to reset to idle.
 */ 
 void OEMIRLEDController::setColour(unsigned long colorCode) {
     sendBurst(colorCode);
+    _currentState = CONTROLLER_STATE_IDLE;
 }
 
 /**

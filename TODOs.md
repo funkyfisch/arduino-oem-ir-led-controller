@@ -9,3 +9,5 @@ Remove usage of OEMIRLEDController pointer and instead use a similar API such as
 Add all colours test as example
 
 Add more example sketches
+
+Provide a way to pass in which PWM pin can be used
